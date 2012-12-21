@@ -1,0 +1,15 @@
+Package: modopt
+Type: Package
+Title: Modeling Optimization Problems
+Version: 0.1-0
+Date: 2012-12-21
+Author: Ronald Hochreiter <ron@hochreiter.net>
+Maintainer: Ronald Hochreiter <ron@hochreiter.net>
+Description: Modeling Optimization Problems
+Depends:
+    R (>= 2.14)
+Imports:
+    linprog,
+    quadprog
+License: GPL-2
+URL: http://www.modopt.com/
