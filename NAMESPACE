@@ -1,2 +1,1 @@
-export(linprog)
-export(quadprog)
+exportPattern("^[[:alpha:]]+")
