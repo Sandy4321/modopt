@@ -13,3 +13,6 @@ Imports:
     quadprog
 License: GPL-2
 URL: http://www.modopt.com/
+Collate:
+    'linprog.R'
+    'quadprog.R'
