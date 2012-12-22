@@ -1,11 +1,14 @@
 \name{quadprog}
 \alias{quadprog}
 \title{Quadratic Programming}
-\description{This function solves a standard Quadratic Programming problem:
-  minimize in x: f'*x + 0.5*x'*H*x 
-  subject to: A*x <= b 
-  subject to: Aeq*x == beq
-  x >= lb
+
+\description{Solve a standard Quadratic Programming problem}
+
+\details{This function solves a standard Quadratic Programming problem:\cr\cr
+  minimize in x: f'*x + 0.5*x'*H*x\cr
+  subject to: A*x <= b\cr
+  subject to: Aeq*x == beq\cr
+  x >= lb\cr
   x <= ub
 }
 
@@ -31,16 +34,33 @@
   \item{x}{Solution vector}
 }
 
-\references{http://www.modopt.com/}
+\references{\url{http://www.modopt.com/}}
 
-\author{Ronald Hochreiter <ron@hochreiter.net>}
+\author{Ronald Hochreiter \email{ron@hochreiter.net}}
 
 \examples{
-cov = c(1,1,1)
-mean = c(1,1,1)
-solution = quadprog()
-cat(solution$x)
+Covariance matrix of four stocks (weekly returns from 2011):
+\preformatted{
+#              AAPL          IBM         MSFT         ORCL
+# AAPL 0.0014708114 0.0006940036 0.0006720841 0.0008276391
+# IBM  0.0006940036 0.0009643581 0.0006239411 0.0011266429
+# MSFT 0.0006720841 0.0006239411 0.0009387707 0.0008728736
+# ORCL 0.0008276391 0.0011266429 0.0008728736 0.0021489512}
+covariance = matrix(c(0.0014708114, 0.0006940036, 0.0006720841, 0.0008276391, 0.0006940036, 0.0009643581, 0.0006239411, 0.0011266429, 0.0006720841, 0.0006239411, 0.0009387707, 0.0008728736, 0.0008276391, 0.0011266429, 0.0008728736, 0.0021489512), nrow=4, byrow=TRUE)
+assets <- dim(covariance)[1]
+
+H <- covariance
+f <- rep(0, assets)
+Aeq <- rep(1, assets)
+beq <- 1
+lb <- rep(0, assets)
+ub <- rep(1, assets)
+
+solution <- quadprog(H, f, NULL, NULL, Aeq, beq, lb, ub)
+portfolio <- solution$x
+print(portfolio)
 }
 
 \keyword{Optimization}
+
 \keyword{Quadratic Programming}

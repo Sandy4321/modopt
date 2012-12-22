@@ -5,7 +5,6 @@
 # subject to: Aeq*x == beq
 # x >= lb
 # x <= ub
-# with a starting solution of x0
 
 quadprog <- function(H, f, A=NULL, b=NULL, Aeq=NULL, beq=NULL, lb=NULL, ub=NULL, x0=NULL, options=NULL, solver="quadprog") {  
   # currently only quadprog is supported

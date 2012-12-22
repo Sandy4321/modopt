@@ -1,14 +1,14 @@
 \name{linprog}
 \alias{linprog}
 \title{Linear Programming}
-\description{Solves a standard Linear Programming optimization problem}
+\description{Solve a standard Linear Programming optimization problem}
 
-\details{This function solves a standard Linear Programming problem in the following form:\cr
-\t minimize in x: f'*x\cr
-\t subject to: A*x <= b\cr
-\t subject to: Aeq*x == beq\cr
-\t x >= lb\cr
-\t x <= ub\cr
+\details{This function solves a standard Linear Programming problem in the following form:\cr\cr
+  minimize in x: f'*x\cr
+  subject to: A*x <= b\cr
+  subject to: Aeq*x == beq\cr
+  x >= lb\cr
+  x <= ub
 }
 
 \usage{
@@ -34,7 +34,7 @@
 
 \references{\url{http://www.modopt.com/}}
 
-\author{Ronald Hochreiter \email{ron@hochreiter.net>}}
+\author{Ronald Hochreiter \email{ron@hochreiter.net}}
 
 \examples{
 # maximize: 2*x1 + x2;

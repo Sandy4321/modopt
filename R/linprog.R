@@ -5,11 +5,10 @@
 # subject to: Aeq*x == beq
 # x >= lb
 # x <= ub
-# with a starting solution of x0
 
-linprog <- function(f, A=NULL, b=NULL, Aeq=NULL, beq=NULL, lb=NULL, ub=NULL, x0=NULL, options=NULL, solver="glpk") {
-  # currently only glpk is supported
-  solver <- "glpk"
+linprog <- function(f, A=NULL, b=NULL, Aeq=NULL, beq=NULL, lb=NULL, ub=NULL, x0=NULL, options=NULL, solver="Rglpk") {
+  # currently only Rglpk is supported
+  solver <- "Rglpk"
   
   # require Rglpk
   require("Rglpk")
