@@ -2,7 +2,7 @@ Package: modopt
 Type: Package
 Title: Modeling Optimization Problems
 Version: 0.1-0
-Date: 2012-12-21
+Date: 2012-12-22
 Author: Ronald Hochreiter <ron@hochreiter.net>
 Maintainer: Ronald Hochreiter <ron@hochreiter.net>
 Description: Modeling Optimization Problems
@@ -13,6 +13,3 @@ Imports:
     quadprog
 License: GPL-2
 URL: http://www.modopt.com/
-Collate:
-    'linprog.R'
-    'quadprog.R'

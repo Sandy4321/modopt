@@ -1,12 +1,14 @@
 \name{linprog}
 \alias{linprog}
 \title{Linear Programming}
-\description{This function solves a standard Linear Programming problem:
-  minimize in x: f'*x
-  subject to: A*x <= b 
-  subject to: Aeq*x == beq
-  x >= lb
-  x <= ub
+\description{Solves a standard Linear Programming optimization problem}
+
+\details{This function solves a standard Linear Programming problem in the following form:\cr
+\t minimize in x: f'*x\cr
+\t subject to: A*x <= b\cr
+\t subject to: Aeq*x == beq\cr
+\t x >= lb\cr
+\t x <= ub\cr
 }
 
 \usage{
@@ -30,15 +32,22 @@
   \item{x}{Solution vector}
 }
 
-\references{http://www.modopt.com/}
+\references{\url{http://www.modopt.com/}}
 
-\author{Ronald Hochreiter <ron@hochreiter.net>}
+\author{Ronald Hochreiter \email{ron@hochreiter.net>}}
 
 \examples{
-cov = c(1,1,1)
-mean = c(1,1,1)
-solution = linprog()
-cat(solution$x)
+# maximize: 2*x1 + x2;
+# subject to: x1+x2 <= 5;
+# subject to: x1 <= 3;
+# x1 >= 0, x2 >= 0
+
+f <- c(2, 1)
+A <- matrix(c(1,1, 1,0), nrow=2, byrow=TRUE)
+b <- c(5, 3)
+
+solution <- linprog(-f, A, b)
+print(solution$x)
 }
 
 \keyword{Optimization}
