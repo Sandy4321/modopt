@@ -1,4 +1,4 @@
-# modopt - Modeling optimization problems
+# Modeling Optimization Problems
 
 *Last update: August 20th, 2013*
 
